@@ -6,4 +6,17 @@ package test;
  * @Description:
  */
 public class Test02 {
+    public static void a(){
+        System.out.println("enter method a");
+    }
+
+    public static void b(){
+        a();
+        System.out.println("enter method b");
+    }
+
+    public static void main(String[] args) {
+        b();
+        System.out.println("enter method main");
+    }
 }
