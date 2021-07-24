@@ -6,4 +6,18 @@ package test;
  * @Description: 引用计数器
  */
 public class ReferenceCountingGC {
+
+    public Object instance = null;
+
+    public static void main(String[] args) {
+        //创建两个对象
+        ReferenceCountingGC objA = new ReferenceCountingGC();
+        ReferenceCountingGC objB = new ReferenceCountingGC();
+        //循环引用
+        objA.instance = objB;
+        objB.instance = objA;
+        objA = null;
+        objB = null;
+        System.gc();
+    }
 }
